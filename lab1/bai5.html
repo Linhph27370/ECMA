@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .user_item{
+            color: green;
+            text-decoration: underline;
+            cursor:pointer;
+        }
+</style>
+
+<body>
+    <div>
+        <div>
+            <label for="">String</label>
+            <input type="text" id="String" value="" placeholder="">
+        </div>
+        <button id="btn" > convert</button>
+
+
+    </div>
+    <ul id="target"></ul>
+</body>
+<script>
+    var target = document.querySelector("#target");
+    var str = document.getElementById("String");
+    var bttAction = document.getElementById("btn");
+
+    bttAction.addEventListener("click",function(){
+        var tagli = document.createElement("li");
+        tagli.setAttribute("class", "user_item");
+        tagli.innerText = `${str.value} `;
+        target.appendChild(tagli);
+        
+    })
+    const camelize = (str) => {
+        return str.replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) => {
+            return index === 0 ? word.toLowerCase() : word.toUpperCase();
+        }).replace(/\s+/g, '');
+    }
+
+    console.log(camelize("Equi pmentClass name"));
+</script>
+
+</html>

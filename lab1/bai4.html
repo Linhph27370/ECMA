@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style type="text/css" media="screen">
+        .user_item{
+            color: green;
+            text-decoration: underline;
+            cursor:pointer;
+        }
+    </style>
+
+    <div class="form">
+        <div>
+            <label for="">ID</label>
+            <input type="number" id="addUserID" value="" placeholder="Nhap ID">
+        </div>
+        <div>
+            <label for="">Name</label>
+            <input type="text" id="addUserName" value="" placeholder="Nhap Name">
+        </div>
+        <div>
+            <label for="">Gender</label>
+            <select name="" id="addUserGender">
+                <option value="1">male</option>
+                <option value="2">female</option>
+            </select>
+        </div>
+        <div>
+            <button type="button" id="addAction">ADD</button>
+        </div>
+    </div>
+    <ul id="target"></ul>
+</body>
+<script>
+    var users =[
+        {id: 1, name: "James Smith", gender: 1},
+        {id: 2, name: "Isla Brown", gender: 2},
+        {id: 3, name: "Amelia Davies", gender: 2},
+        {id: 4, name: "Jacob Evans", gender: 1},
+    ];
+
+    var target = document.querySelector("#target");
+    
+
+    var Arrays = users.map(function (item) {
+        var li = document.createElement("li");
+        li.setAttribute("class", "user_item");
+        li.innerText = `${item.id} ${item.name} ${item.gender}`;
+        target.appendChild(li);
+    });
+    
+    var id = document.getElementById("addUserID");
+    var name1 = document.getElementById("addUserName");
+    var gender = document.getElementById("addUserGender");
+    var btnAction = document.getElementById("addAction");
+    btnAction.addEventListener("click", function () {
+        var tagli = document.createElement("li");
+        tagli.setAttribute("class", "user_item");
+        tagli.innerText = `${id.value} ${name1.value} ${gender.value}`;
+        target.appendChild(tagli);
+    });
+
+
+</script>
+</html>

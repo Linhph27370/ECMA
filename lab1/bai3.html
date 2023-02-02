@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style type="text/css" media="screen">
+        .user_item{
+            color: green;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+    <ul id="target">
+        
+     </ul>
+</body>
+<script>
+    
+    var users =[
+        {id: 1, name: "James Smith", gender: 1},
+        {id: 2, name: "Isla Brown", gender: 2},
+        {id: 3, name: "Amelia Davies", gender: 2},
+        {id: 4, name: "Jacob Evans", gender: 1},
+    ];
+//     users.forEach(function (item) {
+//     console.log(item)
+// })
+    var target = document.querySelector("#target");
+    // var usersArry = users.map(({id , name , gender}) =>({ id,name,gender  }))  ;
+
+    // var user_item= document.querySelector("li");
+   
+    // var newUsers = users.map(function(item){
+    //     return item;
+    // });
+
+    var Arrays = users.map(function (item) {
+        var li = document.createElement("li");
+        li.setAttribute("class", "user_item");
+        li.innerText = `${item.id} ${item.name} ${item.gender}`;
+        target.appendChild(li);
+    })
+    
+    // users.forEach(element => {
+    //     var li = document.createElement("li");
+    //     li.setAttribute("class", "user_item");
+    //     li.innerText = `${element.id} ${element.name} ${element.gender}`;
+    //     target.appendChild(li);
+    // });
+    
+    console.log(users);
+    console.log(users[0]);
+    // console.log(usersArry);
+    
+
+//     var newArr = web17308.map(function(item) {
+//     // Logic biến đổi
+//     return item.split(" ").pop()
+// })
+// function unique(arr){
+//     return arr.filter(function(item,index){
+//         // logic loc
+//         return arr.indexOf(item) == index
+//     })
+// }
+// console.log(unique(newArr));
+
+</script>
+</html>

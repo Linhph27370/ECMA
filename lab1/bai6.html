@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="split">
+        <input type="text" id="input5" />
+        <button class="btn_convert">Convert</button>
+        <h1 class="showConvert"></h1>
+    </div>
+</body>
+<script type="text/javascript">
+    let input5 = document.querySelector("#input5");
+    let btnConvert = document.querySelector(".btn_convert");
+    let showConvert = document.querySelector(".showConvert");
+    btnConvert.onclick = function () {
+        if (input5.value) {
+            let value = input5.value;
+            let newArr = value
+                .trim()
+                .split(" ")
+                .filter((item) => {
+                    return item !== "";
+                });
+            let string = newArr.map((item) => {
+                let element = "";
+                element = item[0].toUpperCase() + item.substring(1);
+                return element;
+            });
+            showConvert.innerHTML = string.join("");
+        }
+    };
+</script>
+
+</html>
